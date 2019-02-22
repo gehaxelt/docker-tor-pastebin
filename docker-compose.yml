@@ -16,9 +16,5 @@ services:
         restart: unless-stopped
         read_only: true
 
-       #ports:
-            # privatebin port
-            #- "3900:80"
-
         volumes:
             - ./data/privatebin:/srv/data
