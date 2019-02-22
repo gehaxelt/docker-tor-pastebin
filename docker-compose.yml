@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+    tor:
+        build: .
+        restart: unless-stopped
+        volumes:
+            - ./data/tor/torrc:/etc/tor/torrc
+            - ./data/tor/entrypoint.sh:/entrypoint.sh
+            - ./data/tor/web:/web
+        links:
+            - privatebin
+
+    privatebin:
+        image: privatebin/nginx-fpm-alpine:latest
+        restart: unless-stopped
+        read_only: true
+
+       #ports:
+            # privatebin port
+            #- "3900:80"
+
+        volumes:
+            - ./data/privatebin:/srv/data

@@ -1,0 +1,9 @@
+SOCKSPort 0
+SOCKSPolicy reject *
+ExitRelay 0
+
+DataDirectory /tmp/tor
+HiddenServiceDir /web/
+HiddenServiceVersion 3
+HiddenServicePort 80 privatebin:80
+Log notice stdout 
