@@ -9,6 +9,7 @@ RUN apt-get update && \
     ntpdate \
     apt-transport-https \
     gpg \
+    gpg-agent \
     ca-certificates  --no-install-recommends && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
